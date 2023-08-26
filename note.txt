@@ -1,0 +1,38 @@
+// // basic
+// seek
+// senseMotive
+// // acrobatics
+// balance
+// maneuverInFlight
+// squeeze
+// tumbleThrough
+// // athletics
+// climb
+// disarm
+// forceOpen
+// grapple
+// highJump
+// longJump
+// shove
+// swim
+// trip
+// whirlingThrow
+// // crafting
+// craft
+// // deception
+// createADiversion
+// feint
+// impersonate
+// lie
+// // diplomacy
+// bonMot
+// gatherInformation
+// makeAnImpression
+// request
+// // intimidation
+// coerce
+// demoralize
+// // stealth
+// hide
+// sneak
+// pickALock

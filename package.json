@@ -1,0 +1,46 @@
+{
+  "name": "pc",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build-linux": "vue-cli-service build",
+    "postbuild-linux": "rm -rf ../pc-prod/dist ; cp -r ./dist ../pc-prod/. ; pm2 restart pc",
+    "build-windows": "vue-cli-service build",
+    "postbuild-windows": "rmdir F:\\rsd\\pc-prod\\dist /s && xcopy F:\\rsd\\pc\\dist F:\\rsd\\pc-prod\\dist /E /H /C /I",
+    "build-pipeline": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^9.1.3",
+    "firebase-admin": "^10.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-vuex": "^5.0.4",
+    "idb-keyval": "^6.0.3",
+    "js-sha1": "^0.6.0",
+    "less-loader": "^11.1.0",
+    "octokit": "^2.0.4",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vue-sanitize": "^0.2.3",
+    "vue-shortkey": "^3.1.7",
+    "vue-wheel-picker": "^0.3.2",
+    "vuedraggable": "^2.24.3",
+    "vuetify": "^2.6.3",
+    "vuetify-multiple-draggable-dialogs": "^1.1.4",
+    "vuex": "^3.6.2",
+    "vuex-persistedstate": "^4.1.0",
+    "@vue/cli-plugin-router": "^5.0.4",
+    "@vue/cli-service": "^5.0.4",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "^2.5.1",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  }
+}
