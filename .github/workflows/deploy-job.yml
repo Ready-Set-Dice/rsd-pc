@@ -3,7 +3,7 @@ run-name: 'Deploy to production'
 
 on:
   push:
-    brances:
+    branches:
       - main
 
 jobs:
