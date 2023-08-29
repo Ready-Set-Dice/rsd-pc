@@ -1,12 +1,9 @@
-# touch .env
-# echo VUE_APP_PROD_API_KEY=${{ secrets.VUE_APP_PROD_API_KEY }} >> .env
-
 name: deploy-to-production
 run-name: 'Deploy to production'
 
 on:
   push:
-    brances:
+    branches:
       - main
 
 jobs:
