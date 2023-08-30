@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "prebuild": "rm -rf ./dist",
+    "build": "vue-cli-service build",
     "build-linux": "vue-cli-service build",
     "postbuild-linux": "rm -rf ../pc-prod/dist ; cp -r ./dist ../pc-prod/. ; pm2 restart pc",
     "build-windows": "vue-cli-service build",
