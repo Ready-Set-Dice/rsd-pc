@@ -17,14 +17,11 @@ jobs:
         with:
           repository: Ready-Set-Dice/rsd-shared.git
           ref: 'main'
-          path: './src/.shared'
+          path: '.shared'
       - name: setup the correct version of node
         uses: actions/setup-node@v3
         with:
           node-version: '18.2'
-      - name: setup shared codebase for backend
-        run: |
-          cp -r src/.shared .
       - name: setup the environment variables
         run: |
           touch .env
