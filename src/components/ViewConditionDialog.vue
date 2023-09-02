@@ -89,7 +89,7 @@ export default {
                 if (name == 'Custom' || name == 'Frightened' || name == 'Blinded' || name == 'Clumsy' ||
                     name == 'Concealed' || name == 'Confuesed' || name == 'Controlled' || name == 'Dazzled' ||
                     name == 'Deafened' || name == 'Drained' || name == 'Encumbered' || name == 'Enfeebled' ||
-                    name == 'Fascinated' || name == 'Flat-Footed' || name == 'Fleeing' || name == 'Friendly' ||
+                    name == 'Fascinated' || name == 'Off-Guard' || name == 'Fleeing' || name == 'Friendly' ||
                     name == 'Grabbed' || name == 'Helpful' || name == 'Hidden' || name == 'Immobilized' ||
                     name == 'Indifferent' || name == 'Invisible' || name == 'Paralyzed' || name == 'Persistent Damage' ||
                     name == 'Quickened' || name == 'Sickened' || name == 'Slowed' || name == 'Stunned' ||
