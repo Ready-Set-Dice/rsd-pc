@@ -405,7 +405,7 @@ export class CombatTrackerHelper {
                     return 'brown lighten-2'
             case 'Fascinated':
                 return 'pink darken-4'
-            case 'Flat-Footed':
+            case 'Off-Guard':
                 if (avatar)
                     return 'deep-orange--text text--darken-1 white'
                 else
