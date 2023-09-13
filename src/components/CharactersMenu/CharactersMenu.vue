@@ -33,7 +33,13 @@
                         <v-icon>mdi-chevron-down</v-icon>
                     </v-list-item-icon>
                 </v-list-item>
-                <v-list-item link class="pl-2 pr-4 py-1" @click="toggleSelection(false)" v-show="!!selecting">
+                <v-list-item 
+                    link 
+                    class="pl-2 pr-4 py-1" 
+                    @click="toggleSelection(false)" 
+                    @contextmenu="characters.contextmenu($event)"
+                    v-show="!!selecting"
+                >
                     <v-list-item-icon class="mr-1">
                         <v-icon>mdi-notebook-edit</v-icon>
                     </v-list-item-icon>
@@ -313,6 +319,7 @@
         </div>
 
         <FloatingMenu ref="playerCharacterContextMenu" :menu="playerCharacterContextMenu" />
+        <FloatingMenu ref="generalCharacterContextMenu" :menu="generalCharacterContextMenu" />
         <CharacterContextMenu ref="characterContextMenu" />
 
         <ConfirmDialog ref="removePlayerCharacterDialog" @Agree="$rsd.playercharacters.removePC(playercharacters.contextSelected._key)"/>
@@ -349,6 +356,19 @@ export default {
             playerDrag: false,
             showBuilder: false,
             showBlocks: false,
+
+            characters: {
+                contextmenu: (event) => {
+                    event.preventDefault()
+
+                    this.closeContextMenus()
+
+                    const clickX = event.clientX
+                    const clickY = event.clientY
+    
+                    this.getDialog('generalCharacterContextMenu').show(clickX, clickY, {width: 200});
+                },
+            },
 
             playercharacters: {
                 width: () => {
@@ -519,6 +539,18 @@ export default {
                     }
                 ]
             },
+
+            generalCharacterContextMenu: {
+                items: [
+                    {
+                        title: 'New Character',
+                        icon: 'mdi-account-plus',
+                        func: () => {
+                            this.openAddPlayerCharacterDialog()
+                        }
+                    },
+                ]
+            },
         }
     },
     computed: {
@@ -554,6 +586,7 @@ export default {
 
         closeContextMenus() {
             this.getDialog('playerCharacterContextMenu').close()
+            this.getDialog('generalCharacterContextMenu').close()
             this.getDialog('characterContextMenu').close()
         },
 
